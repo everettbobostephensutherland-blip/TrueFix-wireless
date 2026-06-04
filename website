@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrueFix Wireless</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+header{
+    background:linear-gradient(135deg,#000,#111);
+    border-bottom:3px solid #008cff;
+    padding:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    border:3px solid #008cff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.logo-circle span{
+    color:#008cff;
+}
+
+.hero{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#008cff;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:1.3rem;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 35px;
+    background:#008cff;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.services{
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#111;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #222;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#008cff;
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#008cff;
+    margin-bottom:15px;
+}
+
+.about{
+    background:#0d0d0d;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#ccc;
+}
+
+.contact{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+    color:#ccc;
+}
+
+.facebook-btn{
+    background:#1877f2;
+    margin-top:25px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:2px solid #008cff;
+    color:#999;
+}
+
+.glow{
+    color:#008cff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">
+<div class="logo-circle">
+T<span>F</span>
+</div>
+
+<div>
+<h1>TRUEFIX</h1>
+<p style="color:#008cff;letter-spacing:4px;">WIRELESS</p>
+</div>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<h1>Professional <span>Phone Repairs</span></h1>
+<p>Fast • Honest • Reliable</p>
+
+<a href="#contact" class="btn">
+Get A Quote
+</a>
+</section>
+
+<section class="services">
+<div class="container">
+
+<h2 class="section-title">Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>📱 Screen Repair</h3>
+<p>Cracked screens repaired quickly and professionally.</p>
+</div>
+
+<div class="card">
+<h3>🔋 Battery Replacement</h3>
+<p>Restore battery life and performance.</p>
+</div>
+
+<div class="card">
+<h3>🔌 Charging Port Repair</h3>
+<p>Fix charging issues and damaged connectors.</p>
+</div>
+
+<div class="card">
+<h3>💧 Water Damage Repair</h3>
+<p>Diagnostic and repair services for liquid damaged devices.</p>
+</div>
+
+<div class="card">
+<h3>📷 Camera Repair</h3>
+<p>Front and rear camera replacement services.</p>
+</div>
+
+<div class="card">
+<h3>⚙️ Custom Part Options</h3>
+<p>You choose budget, OEM, or premium quality parts.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="about">
+<div class="container">
+
+<h2 class="section-title">Why Choose TrueFix Wireless?</h2>
+
+<p>
+At TrueFix Wireless, every repair is handled with care and attention to detail.
+Whether you're looking for an affordable repair or premium-quality replacement parts,
+you decide what works best for your budget. Honest pricing, quality work, and fast service.
+</p>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<p>📍 Vancouver, BC</p>
+<p>📱 Phone Repair Services</p>
+<p>🔧 Screens • Batteries • Charging Ports • More</p>
+
+<a
+href="https://www.facebook.com/share/1KhUVitn95/"
+target="_blank"
+class="btn facebook-btn">
+💬 Message Us on Facebook
+</a>
+
+</section>
+
+<footer>
+© 2026 <span class="glow">TrueFix Wireless</span> | Fast. Honest. Reliable.
+</footer>
+
+</body>
+</html>
