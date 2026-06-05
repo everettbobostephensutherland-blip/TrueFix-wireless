@@ -15,14 +15,14 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 background:#050505;
 color:white;
 overflow-x:hidden;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 .menu-btn{
@@ -31,7 +31,7 @@ top:15px;
 left:15px;
 font-size:35px;
 cursor:pointer;
-z-index:2000;
+z-index:5000;
 background:#111;
 padding:10px 15px;
 border-radius:10px;
@@ -46,9 +46,9 @@ width:320px;
 height:100%;
 background:#111;
 padding:20px;
-transition:.3s;
-z-index:1999;
 overflow-y:auto;
+transition:.3s;
+z-index:4999;
 border-right:3px solid #008cff;
 }
 
@@ -62,9 +62,9 @@ display:block;
 padding:12px;
 margin-bottom:10px;
 background:#1a1a1a;
+border-radius:8px;
 color:white;
 text-decoration:none;
-border-radius:8px;
 }
 
 .side-menu a:hover{
@@ -79,8 +79,8 @@ border-bottom:3px solid #008cff;
 
 .logo{
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 gap:15px;
 }
 
@@ -115,8 +115,8 @@ color:#008cff;
 }
 
 .hero p{
-color:#ccc;
 font-size:1.3rem;
+color:#ccc;
 margin-bottom:30px;
 }
 
@@ -135,25 +135,40 @@ font-size:3rem;
 margin-bottom:50px;
 }
 
-.services{
+.services,
+.reviews,
+.gallery,
+.why-us,
+.request-form,
+.tracker,
+.contact,
+.about{
 padding:80px 20px;
+}
+
+.grid,
+.review-grid,
+.why-grid,
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 max-width:1200px;
 margin:auto;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.card,
+.review-card,
+.why-card{
+background:#111;
+padding:25px;
+border-radius:15px;
+border:1px solid #222;
+transition:.3s;
 }
 
 .card{
-background:#111;
-padding:30px;
-border-radius:15px;
-border:1px solid #222;
 cursor:pointer;
-transition:.3s;
 }
 
 .card:hover{
@@ -161,13 +176,24 @@ transform:translateY(-5px);
 border-color:#008cff;
 }
 
-.card h3{
+.card h3,
+.review-card h3,
+.why-card h3{
 color:#008cff;
 margin-bottom:10px;
 }
 
+.gallery-box{
+height:250px;
+background:#111;
+border:2px dashed #008cff;
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
 .about{
-padding:80px 20px;
 background:#0d0d0d;
 text-align:center;
 }
@@ -178,85 +204,8 @@ margin:auto;
 line-height:1.8;
 color:#ccc;
 }
-
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.85);
-justify-content:center;
-align-items:center;
-z-index:5000;
-}
-
-.popup-content{
-background:#111;
-padding:30px;
-width:90%;
-max-width:700px;
-border-radius:15px;
-border:2px solid #008cff;
-}
-
-.popup-content h2{
-color:#008cff;
-margin-bottom:15px;
-}
-
-.popup-content p{
-line-height:1.7;
-margin-bottom:20px;
-}
-
-.close-btn{
-background:#008cff;
-border:none;
-padding:12px 25px;
-color:white;
-cursor:pointer;
-border-radius:8px;
-}
-
-.cookie-popup{
-position:fixed;
-bottom:20px;
-left:20px;
-right:20px;
-background:#111;
-border:2px solid #008cff;
-padding:20px;
-border-radius:15px;
-z-index:6000;
-}
-
-.cookie-popup button{
-padding:10px 20px;
-margin-top:10px;
-margin-right:10px;
-cursor:pointer;
-}
-
-.contact{
-padding:80px 20px;
-text-align:center;
-}
-
-.facebook-btn{
-background:#1877f2;
-margin-top:20px;
-}
-
-footer{
-padding:25px;
-text-align:center;
-border-top:2px solid #008cff;
-color:#999;
-}
-
 </style>
+
 </head>
 
 <body>
@@ -271,13 +220,15 @@ color:#999;
 
 <a href="#">Home</a>
 <a href="#services">Services</a>
-<a href="#about">About Us</a>
-<a href="#shipping">Shipping Information</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Gallery</a>
+<a href="#why">Why Choose Us</a>
+<a href="#shipping">Shipping Info</a>
 <a href="#repair-policy">Repair Policy</a>
-<a href="#warranty">Warranty Policy</a>
+<a href="#warranty">Warranty</a>
 <a href="#privacy">Privacy Policy</a>
-<a href="#terms">Terms & Conditions</a>
-<a href="#contact">Contact Us</a>
+<a href="#terms">Terms</a>
+<a href="#contact">Contact</a>
 
 </div>
 
@@ -302,7 +253,10 @@ WIRELESS
 
 <section class="hero">
 
-<h1>Professional <span>Electronic Repairs</span></h1>
+<h1>
+Professional
+<span>Electronic Repairs</span>
+</h1>
 
 <p>
 Fast • Honest • Reliable
@@ -366,6 +320,192 @@ Services
 
 </section>
 
+<section id="reviews" class="reviews">
+
+<h2 class="section-title">
+⭐ Customer Reviews
+</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+<h3>★★★★★</h3>
+<p>
+Fast service and excellent communication. My phone looked brand new.
+</p>
+</div>
+
+<div class="review-card">
+<h3>★★★★★</h3>
+<p>
+Very fair pricing and quick turnaround. Highly recommended.
+</p>
+</div>
+
+<div class="review-card">
+<h3>★★★★★</h3>
+<p>
+Explained all repair options before starting and did an amazing job.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery" class="gallery">
+
+<h2 class="section-title">
+📸 Before & After Gallery
+</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-box">
+Before Repair Image
+</div>
+
+<div class="gallery-box">
+After Repair Image
+</div>
+
+<div class="gallery-box">
+Customer Showcase
+</div>
+
+</div>
+
+</section>
+
+<section id="why" class="why-us">
+
+<h2 class="section-title">
+🏆 Why Choose TrueFix Wireless?
+</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>⚡ Fast Service</h3>
+<p>
+Many repairs completed quickly depending on parts availability.
+</p>
+</div>
+
+<div class="why-card">
+<h3>🔧 Quality Repairs</h3>
+<p>
+Every repair is tested before being returned.
+</p>
+</div>
+
+<div class="why-card">
+<h3>💰 Fair Pricing</h3>
+<p>
+Choose the quality of parts that fits your budget.
+</p>
+</div>
+
+<div class="why-card">
+<h3>📱 Multiple Devices</h3>
+<p>
+Phones, tablets, cameras, charging ports, batteries and more.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupText"></p>
+
+<button class="btn" onclick="closePopup()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<section class="request-form">
+
+<h2 class="section-title">
+📋 Repair Request Form
+</h2>
+
+<div style="max-width:700px;margin:auto;">
+
+<input
+type="text"
+placeholder="Full Name"
+style="width:100%;padding:15px;margin-bottom:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<input
+type="email"
+placeholder="Email Address"
+style="width:100%;padding:15px;margin-bottom:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<input
+type="text"
+placeholder="Device Model"
+style="width:100%;padding:15px;margin-bottom:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<textarea
+placeholder="Describe the problem with your device"
+style="width:100%;height:150px;padding:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;margin-bottom:20px;"></textarea>
+
+<a
+href="https://www.facebook.com/share/1KhUVitn95/"
+target="_blank"
+class="btn">
+Submit Request
+</a>
+
+</div>
+
+</section>
+
+<section class="tracker">
+
+<h2 class="section-title">
+⏱️ Repair Status Tracker
+</h2>
+
+<div style="max-width:700px;margin:auto;background:#111;padding:30px;border-radius:15px;">
+
+<p>
+Enter your repair ticket number:
+</p>
+
+<input
+type="text"
+id="ticketInput"
+placeholder="Example: TF-1001"
+style="width:100%;padding:15px;margin-top:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<br><br>
+
+<button
+class="btn"
+onclick="checkRepairStatus()">
+Check Status
+</button>
+
+<div
+id="statusResult"
+style="margin-top:25px;color:#008cff;font-size:22px;font-weight:bold;">
+</div>
+
+</div>
+
+</section>
+
 <section id="about" class="about">
 
 <h2 class="section-title">
@@ -373,7 +513,7 @@ About TrueFix Wireless
 </h2>
 
 <p>
-TrueFix Wireless specializes in professional electronic repairs with honest pricing and quality workmanship. Customers can choose budget, OEM, or premium replacement parts depending on their needs. We strive to provide fast turnaround times, excellent communication, and reliable repair services.
+TrueFix Wireless is dedicated to providing professional electronic repair services with honest pricing, clear communication, and quality workmanship. Customers can choose budget, OEM, or premium replacement parts depending on their needs and budget.
 </p>
 
 </section>
@@ -381,11 +521,11 @@ TrueFix Wireless specializes in professional electronic repairs with honest pric
 <section id="shipping" class="about">
 
 <h2 class="section-title">
-Shipping Information
+📦 Shipping Information
 </h2>
 
 <p>
-Customers are responsible for securely packaging devices before shipping. We recommend using tracking numbers and insurance for valuable devices. TrueFix Wireless is not responsible for damage that occurs during shipping to our repair location. Return shipping estimates may vary depending on carrier performance and location.
+Customers are responsible for securely packaging devices before shipping. Tracking numbers and shipping insurance are highly recommended. TrueFix Wireless is not responsible for shipping damage that occurs during transit to our repair location.
 </p>
 
 </section>
@@ -393,11 +533,11 @@ Customers are responsible for securely packaging devices before shipping. We rec
 <section id="repair-policy" class="about">
 
 <h2 class="section-title">
-Repair Policy
+🔧 Repair Policy
 </h2>
 
 <p>
-By submitting a device for repair, customers authorize diagnostic and repair work. Some devices may reveal additional issues once opened. Water damaged devices cannot be guaranteed to be fully recoverable. Estimated repair times are subject to parts availability and device condition.
+By submitting a device for repair, customers authorize diagnostic and repair work. Additional issues may be discovered after opening a device. Water damaged devices cannot be guaranteed to be fully recoverable.
 </p>
 
 </section>
@@ -405,11 +545,11 @@ By submitting a device for repair, customers authorize diagnostic and repair wor
 <section id="warranty" class="about">
 
 <h2 class="section-title">
-Warranty Policy
+🛡️ Warranty Policy
 </h2>
 
 <p>
-Warranty coverage applies only to replacement parts installed by TrueFix Wireless. Physical damage, liquid damage, accidental damage, misuse, neglect, software issues, or repairs performed by others after service may void warranty coverage. Warranty does not cover unrelated failures that occur after repair.
+Warranty applies only to replacement parts installed by TrueFix Wireless. Physical damage, liquid damage, misuse, neglect, or repairs performed by others after service may void warranty coverage.
 </p>
 
 </section>
@@ -417,11 +557,11 @@ Warranty coverage applies only to replacement parts installed by TrueFix Wireles
 <section id="privacy" class="about">
 
 <h2 class="section-title">
-Privacy Policy
+🔒 Privacy Policy
 </h2>
 
 <p>
-Customer information is collected only for repair services, communication, invoicing, and customer support. TrueFix Wireless does not sell customer information to third parties. Information may be retained for business records and warranty purposes.
+Customer information is collected only for repair services, communication, invoicing, and customer support. TrueFix Wireless does not sell customer information to third parties.
 </p>
 
 </section>
@@ -429,11 +569,11 @@ Customer information is collected only for repair services, communication, invoi
 <section id="terms" class="about">
 
 <h2 class="section-title">
-Terms & Conditions
+📜 Terms & Conditions
 </h2>
 
 <p>
-Repair times are estimates and not guarantees. Customers are responsible for backing up all data before submitting devices for service. While every effort is made to protect customer devices and data, TrueFix Wireless is not responsible for data loss, corruption, or pre-existing device issues. By submitting a device for repair, customers agree to these terms.
+Repair times are estimates and not guarantees. Customers should back up all personal data before submitting devices. TrueFix Wireless is not responsible for data loss occurring during repair services.
 </p>
 
 </section>
@@ -449,13 +589,15 @@ Contact Us
 </p>
 
 <p>
-🔧 Phones • Tablets • Charging Ports • Batteries • Screens • Back Glass • And More
+🔧 Phones • Tablets • Screens • Batteries • Charging Ports • Back Glass • More
 </p>
+
+<br>
 
 <a
 href="https://www.facebook.com/share/1KhUVitn95/"
 target="_blank"
-class="btn facebook-btn">
+class="btn">
 💬 Message Us On Facebook
 </a>
 
@@ -463,71 +605,123 @@ class="btn facebook-btn">
 
 <footer>
 
-© 2026 TrueFix Wireless | Fast • Honest • Reliable
+© 2026 TrueFix Wireless
+
+<br><br>
+
+Fast • Honest • Reliable
 
 </footer>
 
-<div class="popup" id="popup">
 
-<div class="popup-content">
+<style>
 
-<h2 id="popupTitle"></h2>
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+z-index:10000;
+}
 
-<p id="popupText"></p>
+.popup-content{
+background:#111;
+padding:30px;
+width:90%;
+max-width:700px;
+border-radius:15px;
+border:2px solid #008cff;
+}
 
-<button class="close-btn" onclick="closePopup()">
-Close
-</button>
+.popup-content h2{
+color:#008cff;
+margin-bottom:15px;
+}
 
-</div>
+.popup-content p{
+line-height:1.7;
+margin-bottom:20px;
+}
 
-</div>
+.cookie-popup{
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+background:#111;
+border:2px solid #008cff;
+padding:20px;
+border-radius:15px;
+z-index:15000;
+}
 
-<div id="cookiePopup" class="cookie-popup">
+.cookie-popup button{
+margin-top:10px;
+margin-right:10px;
+}
+
+</style>
+
+<div
+id="cookiePopup"
+class="cookie-popup">
 
 <h2>
-Cookie Notice
+🍪 Cookie Notice
 </h2>
 
 <p>
-This website uses cookies and local storage to improve your experience and remember your preferences.
+This website uses cookies and local storage to improve your experience and save preferences. By clicking Accept, you agree to the use of cookies.
 </p>
 
-<button onclick="acceptCookies()">
+<button
+class="btn"
+onclick="acceptCookies()">
 Accept
 </button>
 
-<button onclick="declineCookies()">
+<button
+class="btn"
+onclick="declineCookies()">
 Decline
 </button>
 
 </div>
 
-
 <script>
 
 function toggleMenu(){
 
-let menu = document.getElementById("sideMenu");
+let menu =
+document.getElementById("sideMenu");
 
-if(menu.style.left === "0px"){
-menu.style.left = "-320px";
+if(menu.style.left==="0px"){
+
+menu.style.left="-320px";
+
 }else{
-menu.style.left = "0px";
+
+menu.style.left="0px";
+
 }
 
 }
 
 function openPopup(type){
 
-let title = "";
-let text = "";
+let title="";
+let text="";
 
 if(type==="screen"){
 
 title="📱 Screen Repair";
 
-text="We professionally replace cracked, damaged, or non-functioning screens. Every screen is tested for touch responsiveness, brightness, display quality, and functionality before being returned to the customer.";
+text="We professionally replace cracked, damaged, or non-working screens. Every repair is tested for touch response, display quality, brightness, and overall functionality before being returned.";
 
 }
 
@@ -535,7 +729,7 @@ if(type==="battery"){
 
 title="🔋 Battery Replacement";
 
-text="If your device drains quickly, overheats, or shuts down unexpectedly, we can replace the battery with the quality option you choose and verify proper charging and battery health.";
+text="Battery replacements are available using the quality option you choose. We verify charging performance and battery health after installation.";
 
 }
 
@@ -543,7 +737,7 @@ if(type==="charging"){
 
 title="🔌 Charging Port Repair";
 
-text="Charging issues are diagnosed and repaired. We inspect, clean, repair, or replace damaged charging ports and verify proper charging performance before completing the repair.";
+text="Charging issues are diagnosed and repaired. Ports may be cleaned, repaired, or replaced depending on the issue.";
 
 }
 
@@ -551,7 +745,7 @@ if(type==="water"){
 
 title="💧 Water Damage Repair";
 
-text="Water damaged devices are carefully inspected and cleaned. We diagnose affected components and discuss available repair options. Recovery cannot always be guaranteed depending on damage severity.";
+text="Water damaged devices are inspected, cleaned, and diagnosed. Recovery depends on the extent of the liquid damage.";
 
 }
 
@@ -559,7 +753,7 @@ if(type==="camera"){
 
 title="📷 Camera Repair";
 
-text="Front and rear camera issues such as blurry images, cracked lenses, camera errors, or camera failure can be diagnosed and repaired using replacement camera modules when required.";
+text="Front and rear camera problems including blurry images, broken lenses, and camera failures can be diagnosed and repaired.";
 
 }
 
@@ -567,7 +761,7 @@ if(type==="parts"){
 
 title="⚙️ Custom Part Options";
 
-text="Customers can choose between budget, OEM, or premium replacement parts. We explain the differences and help you select the option that best fits your needs and budget.";
+text="Choose between budget, OEM, or premium replacement parts. We explain the differences so you can make an informed decision.";
 
 }
 
@@ -575,7 +769,7 @@ if(type==="backglass"){
 
 title="🔥 Back Glass Repair";
 
-text="Cracked or shattered back glass can be professionally removed and replaced. The device is cleaned and inspected during the repair process to ensure proper installation.";
+text="Broken back glass is carefully removed and replaced. The device is cleaned and inspected throughout the repair process.";
 
 }
 
@@ -583,59 +777,113 @@ if(type==="more"){
 
 title="➕ Additional Services";
 
-text="We also offer diagnostics, speaker repair, microphone repair, button repair, earpiece repair, housing replacement, device cleaning, and many other electronic repair services.";
+text="Speaker repair, microphone repair, button repair, diagnostics, housing replacement, cleaning services, and more.";
 
 }
 
-document.getElementById("popupTitle").innerHTML = title;
+document.getElementById("popupTitle").innerHTML=title;
 
-document.getElementById("popupText").innerHTML = text;
+document.getElementById("popupText").innerHTML=text;
 
-document.getElementById("popup").style.display = "flex";
+document.getElementById("popup").style.display="flex";
 
 }
 
 function closePopup(){
 
-document.getElementById("popup").style.display = "none";
+document.getElementById("popup").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+let popup=document.getElementById("popup");
+
+if(event.target===popup){
+
+popup.style.display="none";
+
+}
+
+}
+
+function checkRepairStatus(){
+
+let ticket=
+document.getElementById("ticketInput").value;
+
+let result=
+document.getElementById("statusResult");
+
+if(ticket==="TF-1001"){
+
+result.innerHTML=
+"✅ Repair Completed";
+
+}
+
+else if(ticket==="TF-1002"){
+
+result.innerHTML=
+"🔧 Currently Being Repaired";
+
+}
+
+else if(ticket==="TF-1003"){
+
+result.innerHTML=
+"📦 Waiting For Parts";
+
+}
+
+else{
+
+result.innerHTML=
+"❓ Ticket Not Found";
+
+}
 
 }
 
 function acceptCookies(){
 
-localStorage.setItem("truefixCookies","accepted");
+localStorage.setItem(
+"truefixCookies",
+"accepted"
+);
 
-document.getElementById("cookiePopup").style.display="none";
+document.getElementById(
+"cookiePopup"
+).style.display="none";
 
 }
 
 function declineCookies(){
 
-document.getElementById("cookiePopup").style.display="none";
+document.getElementById(
+"cookiePopup"
+).style.display="none";
 
 }
 
-window.onload = function(){
+window.addEventListener(
+"load",
+function(){
 
-if(localStorage.getItem("truefixCookies")){
+if(
+localStorage.getItem(
+"truefixCookies"
+)
+){
 
-document.getElementById("cookiePopup").style.display="none";
-
-}
-
-}
-
-window.onclick = function(event){
-
-let popup = document.getElementById("popup");
-
-if(event.target === popup){
-
-popup.style.display = "none";
+document.getElementById(
+"cookiePopup"
+).style.display="none";
 
 }
 
 }
+);
 
 </script>
 
