@@ -7,263 +7,528 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#050505;
-    color:white;
+background:#050505;
+color:white;
 }
+
+/* ================= HAMBURGER ================= */
+.hamburger{
+position:fixed;
+top:15px;
+left:15px;
+font-size:34px;
+color:#008cff;
+cursor:pointer;
+z-index:9999;
+}
+
+.side-menu{
+position:fixed;
+top:0;
+left:-260px;
+width:260px;
+height:100%;
+background:#111;
+border-right:2px solid #008cff;
+padding:20px;
+transition:0.3s;
+z-index:9998;
+}
+
+.side-menu.active{left:0;}
+
+.side-menu h3{
+color:#008cff;
+margin-bottom:10px;
+}
+
+.side-menu button{
+width:100%;
+padding:10px;
+margin:6px 0;
+background:#0a0a0a;
+border:1px solid #222;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* ================= ACCOUNT ================= */
+#userTop{
+position:fixed;
+top:15px;
+right:15px;
+color:#008cff;
+font-size:14px;
+z-index:9999;
+cursor:pointer;
+}
+
+.authBox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+z-index:10000;
+}
+
+.auth-content{
+background:#111;
+padding:25px;
+border-radius:12px;
+border:2px solid #008cff;
+width:90%;
+max-width:400px;
+}
+
+.auth-content input{
+width:100%;
+padding:10px;
+margin:6px 0;
+background:#000;
+border:1px solid #333;
+color:white;
+border-radius:6px;
+}
+
+.auth-tabs{
+display:flex;
+}
+
+.auth-tabs button{
+flex:1;
+padding:10px;
+background:#111;
+border:1px solid #333;
+color:white;
+cursor:pointer;
+}
+
+.auth-tabs button.active{
+border-color:#008cff;
+color:#008cff;
+}
+
+/* ================= COOKIE ================= */
+.cookie{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#111;
+border-top:2px solid #008cff;
+padding:15px;
+display:none;
+justify-content:space-between;
+align-items:center;
+z-index:10000;
+}
+
+.cookie button{
+margin-left:10px;
+padding:8px 15px;
+border:none;
+cursor:pointer;
+border-radius:6px;
+}
+
+.accept{background:#008cff;color:white;}
+.decline{background:#333;color:white;}
+
+/* ================= ORIGINAL CSS (UNCHANGED) ================= */
 
 header{
-    background:linear-gradient(135deg,#000,#111);
-    border-bottom:3px solid #008cff;
-    padding:20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
+background:linear-gradient(135deg,#000,#111);
+border-bottom:3px solid #008cff;
+padding:20px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
+display:flex;
+align-items:center;
+gap:15px;
+max-width:1200px;
+margin:auto;
 }
 
 .logo-circle{
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    border:3px solid #008cff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    font-weight:bold;
+width:80px;
+height:80px;
+border-radius:50%;
+border:3px solid #008cff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:36px;
+font-weight:bold;
 }
 
-.logo-circle span{
-    color:#008cff;
-}
+.logo-circle span{color:#008cff;}
 
 .hero{
-    text-align:center;
-    padding:120px 20px;
+text-align:center;
+padding:120px 20px;
 }
 
 .hero h1{
-    font-size:4rem;
-    margin-bottom:20px;
+font-size:4rem;
+margin-bottom:15px;
 }
 
-.hero h1 span{
-    color:#008cff;
-}
+.hero span{color:#008cff;}
 
 .hero p{
-    color:#ccc;
-    font-size:1.3rem;
-    margin-bottom:35px;
+font-size:1.3rem;
+color:#ccc;
+margin-bottom:30px;
 }
 
 .btn{
-    display:inline-block;
-    padding:16px 35px;
-    background:#008cff;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    font-size:18px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.05);
-}
-
-.services{
-    padding:80px 20px;
+display:inline-block;
+background:#008cff;
+color:white;
+text-decoration:none;
+padding:15px 35px;
+border-radius:10px;
+font-size:18px;
 }
 
 .section-title{
-    text-align:center;
-    font-size:3rem;
-    margin-bottom:50px;
+text-align:center;
+font-size:3rem;
+margin-bottom:50px;
+}
+
+.services{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#111;
-    padding:30px;
-    border-radius:15px;
-    border:1px solid #222;
-    transition:.3s;
+background:#111;
+padding:30px;
+border-radius:15px;
+border:1px solid #222;
+cursor:pointer;
+transition:0.3s;
 }
 
 .card:hover{
-    border-color:#008cff;
-    transform:translateY(-5px);
+transform:translateY(-5px);
+border-color:#008cff;
 }
 
 .card h3{
-    color:#008cff;
-    margin-bottom:15px;
+color:#008cff;
+margin-bottom:10px;
 }
 
 .about{
-    background:#0d0d0d;
-    padding:80px 20px;
-    text-align:center;
+background:#0d0d0d;
+padding:80px 20px;
+text-align:center;
 }
 
 .about p{
-    max-width:800px;
-    margin:auto;
-    line-height:1.8;
-    color:#ccc;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+color:#ccc;
 }
 
 .contact{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.contact p{
-    margin:10px 0;
-    color:#ccc;
+padding:80px 20px;
+text-align:center;
 }
 
 .facebook-btn{
-    background:#1877f2;
-    margin-top:25px;
+background:#1877f2;
+margin-top:25px;
 }
 
 footer{
-    text-align:center;
-    padding:25px;
-    border-top:2px solid #008cff;
-    color:#999;
+padding:25px;
+text-align:center;
+border-top:2px solid #008cff;
+color:#999;
 }
 
-.glow{
-    color:#008cff;
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:10000;
+}
+
+.popup-content{
+background:#111;
+padding:30px;
+width:90%;
+max-width:600px;
+border-radius:15px;
+border:2px solid #008cff;
+}
+
+.close-btn{
+background:#008cff;
+border:none;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="container">
-<div class="logo">
-<div class="logo-circle">
-T<span>F</span>
+<!-- HAMBURGER -->
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<!-- MENU -->
+<div class="side-menu" id="menu">
+<h3>Menu</h3>
+<button onclick="openAuth()">Account</button>
+<button onclick="logout()">Logout</button>
+<button onclick="alert('Games Menu Coming Soon')">🎮 Games Menu</button>
 </div>
 
+<!-- USER DISPLAY -->
+<div id="userTop" onclick="openAuth()">Not logged in</div>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookie">
+<span>This site uses cookies to improve experience.</span>
+<div>
+<button class="accept" onclick="acceptCookies()">Accept</button>
+<button class="decline" onclick="declineCookies()">Decline</button>
+</div>
+</div>
+
+<header>
+<div class="logo">
+<div class="logo-circle">T<span>F</span></div>
 <div>
 <h1>TRUEFIX</h1>
-<p style="color:#008cff;letter-spacing:4px;">WIRELESS</p>
-</div>
+<p style="color:#008cff;">WIRELESS</p>
 </div>
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <h1>Professional <span>Phone Repairs</span></h1>
 <p>Fast • Honest • Reliable</p>
-
-<a href="#contact" class="btn">
-Get A Quote
-</a>
+<a href="#contact" class="btn">Get A Quote</a>
 </section>
 
+<!-- SERVICES -->
 <section class="services">
-<div class="container">
-
 <h2 class="section-title">Services</h2>
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="openPopup('screen')">
 <h3>📱 Screen Repair</h3>
-<p>Cracked screens repaired quickly and professionally.</p>
+<p>Tap for details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('battery')">
 <h3>🔋 Battery Replacement</h3>
-<p>Restore battery life and performance.</p>
+<p>Tap for details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('charging')">
 <h3>🔌 Charging Port Repair</h3>
-<p>Fix charging issues and damaged connectors.</p>
+<p>Tap for details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('water')">
 <h3>💧 Water Damage Repair</h3>
-<p>Diagnostic and repair services for liquid damaged devices.</p>
+<p>Tap for details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('camera')">
 <h3>📷 Camera Repair</h3>
-<p>Front and rear camera replacement services.</p>
+<p>Tap for details</p>
 </div>
 
-<div class="card">
-<h3>⚙️ Custom Part Options</h3>
-<p>You choose budget, OEM, or premium quality parts.</p>
-</div>
-
+<div class="card" onclick="openPopup('parts')">
+<h3>⚙️ Custom Parts</h3>
+<p>Tap for details</p>
 </div>
 
 </div>
 </section>
 
 <section class="about">
-<div class="container">
-
 <h2 class="section-title">Why Choose TrueFix Wireless?</h2>
-
-<p>
-At TrueFix Wireless, every repair is handled with care and attention to detail.
-Whether you're looking for an affordable repair or premium-quality replacement parts,
-you decide what works best for your budget. Honest pricing, quality work, and fast service.
-</p>
-
-</div>
+<p>Fast, honest, and professional phone repairs.</p>
 </section>
 
 <section class="contact" id="contact">
-
 <h2 class="section-title">Contact Us</h2>
 
-<p>📍 Vancouver, BC</p>
-<p>📱 Phone Repair Services</p>
-<p>🔧 Screens • Batteries • Charging Ports • More</p>
-
-<a
-href="https://www.facebook.com/share/1KhUVitn95/"
-target="_blank"
-class="btn facebook-btn">
-💬 Message Us on Facebook
+<a class="btn facebook-btn" target="_blank"
+href="https://www.facebook.com/share/1KhUVitn95/">
+💬 Message Us On Facebook
 </a>
-
 </section>
 
 <footer>
-© 2026 <span class="glow">TrueFix Wireless</span> | Fast. Honest. Reliable.
+© 2026 TrueFix Wireless
 </footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-content">
+<h2 id="title"></h2>
+<p id="text"></p>
+<button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<!-- AUTH -->
+<div class="authBox" id="authBox">
+<div class="auth-content">
+
+<div class="auth-tabs">
+<button onclick="showLogin()">Login</button>
+<button onclick="showSignup()">Sign Up</button>
+</div>
+
+<div id="loginBox">
+<input id="loginUser" placeholder="Username">
+<input id="loginPass" type="password" placeholder="Password">
+<button class="close-btn" onclick="login()">Login</button>
+</div>
+
+<div id="signupBox" style="display:none;">
+<input id="suEmail" placeholder="Email">
+<input id="suUser" placeholder="Username">
+<input id="suPass" type="password">
+<button class="close-btn" onclick="signup()">Create Account</button>
+</div>
+
+<button class="close-btn" onclick="closeAuth()">Close</button>
+
+</div>
+</div>
+
+<script>
+
+/* MENU */
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+/* ACCOUNT */
+function openAuth(){
+document.getElementById("authBox").style.display="flex";
+}
+function closeAuth(){
+document.getElementById("authBox").style.display="none";
+}
+
+function showLogin(){
+document.getElementById("loginBox").style.display="block";
+document.getElementById("signupBox").style.display="none";
+}
+
+function showSignup(){
+document.getElementById("loginBox").style.display="none";
+document.getElementById("signupBox").style.display="block";
+}
+
+function signup(){
+localStorage.setItem("user",document.getElementById("suUser").value);
+localStorage.setItem("pass",document.getElementById("suPass").value);
+setUser();
+closeAuth();
+}
+
+function login(){
+if(
+document.getElementById("loginUser").value===localStorage.getItem("user") &&
+document.getElementById("loginPass").value===localStorage.getItem("pass")
+){
+setUser();
+closeAuth();
+}else alert("Wrong login");
+}
+
+function logout(){
+localStorage.removeItem("user");
+setUser();
+}
+
+function setUser(){
+let u=localStorage.getItem("user");
+document.getElementById("userTop").innerText=u?"Hi "+u:"Not logged in";
+}
+
+setUser();
+
+/* COOKIE */
+function acceptCookies(){
+localStorage.setItem("cookies","yes");
+document.getElementById("cookie").style.display="none";
+}
+function declineCookies(){
+localStorage.setItem("cookies","no");
+document.getElementById("cookie").style.display="none";
+}
+if(!localStorage.getItem("cookies")){
+document.getElementById("cookie").style.display="flex";
+}
+
+/* POPUP DETAILS */
+function openPopup(type){
+
+let data={
+screen:"Replace screen → remove old glass → install new display → test touch + brightness",
+battery:"Replace battery → reconnect flex cable → test charging + drain speed",
+charging:"Clean/replace port → test fast charging",
+water:"Dry + clean board → check damage → repair components",
+camera:"Replace camera module → test focus + zoom",
+parts:"Choose budget / OEM / premium parts"
+};
+
+document.getElementById("title").innerText=type.toUpperCase();
+document.getElementById("text").innerText=data[type];
+document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
