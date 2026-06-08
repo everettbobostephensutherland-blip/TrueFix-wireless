@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-TrueFix Wireless
-</title>
+<title>TrueFix Wireless</title>
 
 <style>
 
@@ -36,24 +30,11 @@ position:fixed;
 top:15px;
 left:15px;
 font-size:35px;
+cursor:pointer;
+z-index:5000;
 background:#111;
 padding:10px 15px;
 border-radius:10px;
-cursor:pointer;
-z-index:5000;
-border:2px solid #008cff;
-}
-
-.theme-btn{
-position:fixed;
-top:15px;
-right:15px;
-font-size:25px;
-background:#111;
-padding:10px 15px;
-border-radius:10px;
-cursor:pointer;
-z-index:5000;
 border:2px solid #008cff;
 }
 
@@ -81,13 +62,18 @@ display:block;
 padding:12px;
 margin-bottom:10px;
 background:#1a1a1a;
+border-radius:8px;
 color:white;
 text-decoration:none;
-border-radius:8px;
+}
+
+.side-menu a:hover{
+background:#008cff;
 }
 
 header{
-padding:30px;
+background:linear-gradient(135deg,#000,#111);
+padding:25px;
 border-bottom:3px solid #008cff;
 }
 
@@ -96,7 +82,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 gap:15px;
-cursor:pointer;
 }
 
 .logo-circle{
@@ -122,6 +107,7 @@ padding:120px 20px;
 
 .hero h1{
 font-size:4rem;
+margin-bottom:20px;
 }
 
 .hero span{
@@ -129,9 +115,9 @@ color:#008cff;
 }
 
 .hero p{
-margin-top:20px;
 font-size:1.3rem;
 color:#ccc;
+margin-bottom:30px;
 }
 
 .btn{
@@ -140,140 +126,125 @@ padding:15px 35px;
 background:#008cff;
 color:white;
 text-decoration:none;
-border:none;
 border-radius:10px;
-cursor:pointer;
-margin-top:20px;
 }
 
 .section-title{
 text-align:center;
 font-size:3rem;
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1200px;
-margin:auto;
-}
-
-.card{
-background:#111;
-padding:25px;
-border-radius:15px;
-border:1px solid #222;
-}
-
-.card h3{
-color:#008cff;
-margin-bottom:10px;
+margin-bottom:50px;
 }
 
 .services,
 .reviews,
 .gallery,
-.booking,
-.quote,
-.prices,
-.faq,
+.why-us,
+.request-form,
+.tracker,
 .contact,
-.legal{
+.about{
 padding:80px 20px;
 }
 
-input,
-textarea,
-select{
-width:100%;
-padding:15px;
-margin-bottom:15px;
+.grid,
+.review-grid,
+.why-grid,
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card,
+.review-card,
+.why-card{
 background:#111;
-border:1px solid #333;
-border-radius:10px;
-color:white;
+padding:25px;
+border-radius:15px;
+border:1px solid #222;
+transition:.3s;
 }
 
-textarea{
-height:150px;
-resize:none;
+.card{
+cursor:pointer;
 }
 
+.card:hover{
+transform:translateY(-5px);
+border-color:#008cff;
+}
+
+.card h3,
+.review-card h3,
+.why-card h3{
+color:#008cff;
+margin-bottom:10px;
+}
+
+.gallery-box{
+height:250px;
+background:#111;
+border:2px dashed #008cff;
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.about{
+background:#0d0d0d;
+text-align:center;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+color:#ccc;
+}
 </style>
 
 </head>
 
 <body>
 
-<div
-class="menu-btn"
-onclick="toggleMenu()">
+<div class="menu-btn" onclick="toggleMenu()">
 ☰
 </div>
 
-<div
-class="theme-btn"
-onclick="toggleTheme()">
-🌓
-</div>
+<div id="sideMenu" class="side-menu">
 
-<div
-id="sideMenu"
-class="side-menu">
+<h2>TrueFix Wireless</h2>
 
-<h2>
-TrueFix Wireless
-</h2>
-
-<a href="#">
-Home
-</a>
-
-<a href="#services">
-Services
-</a>
-
-<a href="#reviews">
-Reviews
-</a>
-
-<a href="#gallery">
-Gallery
-</a>
-
-<a href="#booking">
-Booking
-</a>
-
-<a href="#contact">
-Contact
-</a>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Gallery</a>
+<a href="#why">Why Choose Us</a>
+<a href="#shipping">Shipping Info</a>
+<a href="#repair-policy">Repair Policy</a>
+<a href="#warranty">Warranty</a>
+<a href="#privacy">Privacy Policy</a>
+<a href="#terms">Terms</a>
+<a href="#contact">Contact</a>
 
 </div>
 
 <header>
 
-<div
-class="logo"
-onclick="logoClick()">
+<div class="logo">
 
 <div class="logo-circle">
 T<span>F</span>
 </div>
 
 <div>
-
-<h1>
-TRUEFIX
-</h1>
-
-<p style="color:#008cff;">
+<h1>TRUEFIX</h1>
+<p style="color:#008cff;letter-spacing:4px;">
 WIRELESS
 </p>
-
 </div>
 
 </div>
@@ -283,1108 +254,342 @@ WIRELESS
 <section class="hero">
 
 <h1>
-
 Professional
-
-<span>
-Phone Repair
-</span>
-
+<span>Electronic Repairs</span>
 </h1>
 
 <p>
-
 Fast • Honest • Reliable
-
 </p>
 
-<a
-href="#booking"
-class="btn">
-
-Book Repair
-
+<a href="#contact" class="btn">
+Get A Quote
 </a>
 
 </section>
 
-<section
-id="services"
-class="services">
+<section id="services" class="services">
 
 <h2 class="section-title">
-🔧 Our Services
+Services
 </h2>
 
 <div class="grid">
 
-<div class="card">
+<div class="card" onclick="openPopup('screen')">
 <h3>📱 Screen Repair</h3>
-<p>
-Cracked screens, OLED damage, dead pixels, touch problems, and display replacement.
-</p>
+<p>Tap for more details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('battery')">
 <h3>🔋 Battery Replacement</h3>
-<p>
-Battery health issues, swelling batteries, rapid battery drain, and replacement.
-</p>
+<p>Tap for more details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('charging')">
 <h3>🔌 Charging Port Repair</h3>
-<p>
-Loose charging ports, charging failures, debris cleaning, and replacement.
-</p>
+<p>Tap for more details</p>
 </div>
 
-<div class="card">
-<h3>📷 Camera Repair</h3>
-<p>
-Front and rear camera replacement, focus issues, and image quality repairs.
-</p>
-</div>
-
-<div class="card">
-<h3>🔥 Back Glass Repair</h3>
-<p>
-Professional back glass replacement for cracked or shattered devices.
-</p>
-</div>
-
-<div class="card">
+<div class="card" onclick="openPopup('water')">
 <h3>💧 Water Damage Repair</h3>
-<p>
-Diagnostics and recovery attempts for liquid-damaged devices.
-</p>
+<p>Tap for more details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('camera')">
+<h3>📷 Camera Repair</h3>
+<p>Tap for more details</p>
+</div>
+
+<div class="card" onclick="openPopup('parts')">
 <h3>⚙️ Custom Part Options</h3>
-<p>
-Choose budget, OEM, or premium quality replacement parts.
-</p>
+<p>Tap for more details</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup('backglass')">
+<h3>🔥 Back Glass Repair</h3>
+<p>Tap for more details</p>
+</div>
+
+<div class="card" onclick="openPopup('more')">
 <h3>➕ And More</h3>
-<p>
-Speakers, microphones, buttons, diagnostics, cleaning services, and more.
-</p>
+<p>Tap for more details</p>
 </div>
 
 </div>
 
 </section>
 
-<section
-class="quote">
-
-<h2 class="section-title">
-💰 Quote Calculator
-</h2>
-
-<div
-style="
-max-width:700px;
-margin:auto;
-">
-
-<select id="repairType">
-
-<option value="0">
-Select Repair Type
-</option>
-
-<option value="120">
-Screen Repair
-</option>
-
-<option value="80">
-Battery Replacement
-</option>
-
-<option value="70">
-Charging Port Repair
-</option>
-
-<option value="150">
-Back Glass Repair
-</option>
-
-<option value="90">
-Camera Repair
-</option>
-
-</select>
-
-<button
-class="btn"
-onclick="calculateQuote()">
-
-Calculate Quote
-
-</button>
-
-<br><br>
-
-<h2 id="quoteResult">
-Estimated Cost: $0
-</h2>
-
-</div>
-
-</section>
-
-<section
-class="prices">
-
-<h2 class="section-title">
-📋 Price List
-</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Screen Repair</h3>
-<p>Starting at $120</p>
-</div>
-
-<div class="card">
-<h3>Battery Replacement</h3>
-<p>Starting at $80</p>
-</div>
-
-<div class="card">
-<h3>Charging Port Repair</h3>
-<p>Starting at $70</p>
-</div>
-
-<div class="card">
-<h3>Back Glass Repair</h3>
-<p>Starting at $150</p>
-</div>
-
-<div class="card">
-<h3>Camera Repair</h3>
-<p>Starting at $90</p>
-</div>
-
-<div class="card">
-<h3>Diagnostics</h3>
-<p>Starting at $25</p>
-</div>
-
-</div>
-
-</section>
-
-<section
-class="faq">
-
-<h2 class="section-title">
-❓ Frequently Asked Questions
-</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Do I need an appointment?</h3>
-<p>
-Appointments are recommended but not required.
-</p>
-</div>
-
-<div class="card">
-<h3>Can I mail in my device?</h3>
-<p>
-Yes. Devices can be securely shipped to TrueFix Wireless.
-</p>
-</div>
-
-<div class="card">
-<h3>Do you offer warranties?</h3>
-<p>
-Warranty coverage may be available depending on the repair performed.
-</p>
-</div>
-
-<div class="card">
-<h3>How long do repairs take?</h3>
-<p>
-Repair times vary depending on device type and part availability.
-</p>
-</div>
-
-<div class="card">
-<h3>Should I back up my data?</h3>
-<p>
-Yes. Always back up important data before repair.
-</p>
-</div>
-
-<div class="card">
-<h3>Can I choose part quality?</h3>
-<p>
-Yes. Budget, OEM, and premium options are available.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section
-id="reviews"
-class="reviews">
+<section id="reviews" class="reviews">
 
 <h2 class="section-title">
 ⭐ Customer Reviews
 </h2>
 
-<div
-id="reviewContainer"
-class="grid">
+<div class="review-grid">
 
-<div class="card">
-
-<h3>
-★★★★★
-</h3>
-
+<div class="review-card">
+<h3>★★★★★</h3>
 <p>
-Fast service and great communication.
+Fast service and excellent communication. My phone looked brand new.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>
-★★★★★
-</h3>
-
+<div class="review-card">
+<h3>★★★★★</h3>
 <p>
-Excellent repair quality and fair pricing.
+Very fair pricing and quick turnaround. Highly recommended.
 </p>
+</div>
 
+<div class="review-card">
+<h3>★★★★★</h3>
+<p>
+Explained all repair options before starting and did an amazing job.
+</p>
 </div>
 
 </div>
 
 </section>
 
-<section
-id="gallery"
-class="gallery">
+<section id="gallery" class="gallery">
 
 <h2 class="section-title">
 📸 Before & After Gallery
 </h2>
 
-<div
-id="galleryContainer"
-class="grid">
+<div class="gallery-grid">
 
-<div class="card">
+<div class="gallery-box">
+Before Repair Image
+</div>
 
-<h3>
-Repair Photos
-</h3>
+<div class="gallery-box">
+After Repair Image
+</div>
 
-<p>
-Photos uploaded by TrueFix Wireless will appear here.
-</p>
-
+<div class="gallery-box">
+Customer Showcase
 </div>
 
 </div>
 
 </section>
 
-<section
-id="booking"
-class="booking">
+<section id="why" class="why-us">
 
 <h2 class="section-title">
-📅 Book A Repair
+🏆 Why Choose TrueFix Wireless?
 </h2>
 
-<div
-style="
-max-width:800px;
-margin:auto;
-">
+<div class="why-grid">
 
-<input
-id="bookName"
-placeholder="Full Name">
+<div class="why-card">
+<h3>⚡ Fast Service</h3>
+<p>
+Many repairs completed quickly depending on parts availability.
+</p>
+</div>
 
-<input
-id="bookEmail"
-placeholder="Email Address">
+<div class="why-card">
+<h3>🔧 Quality Repairs</h3>
+<p>
+Every repair is tested before being returned.
+</p>
+</div>
 
-<input
-id="bookPhone"
-placeholder="Phone Number">
+<div class="why-card">
+<h3>💰 Fair Pricing</h3>
+<p>
+Choose the quality of parts that fits your budget.
+</p>
+</div>
 
-<input
-id="bookDevice"
-placeholder="Device Model">
-
-<select
-id="bookRepair">
-
-<option>
-Screen Repair
-</option>
-
-<option>
-Battery Replacement
-</option>
-
-<option>
-Charging Port Repair
-</option>
-
-<option>
-Back Glass Repair
-</option>
-
-<option>
-Camera Repair
-</option>
-
-<option>
-Water Damage Repair
-</option>
-
-</select>
-
-<textarea
-id="bookProblem"
-placeholder="Describe the issue">
-</textarea>
-
-<button
-class="btn"
-onclick="createTicket()">
-
-Create Repair Ticket
-
-</button>
-
-<br><br>
-
-<h2
-id="ticketOutput">
-</h2>
+<div class="why-card">
+<h3>📱 Multiple Devices</h3>
+<p>
+Phones, tablets, cameras, charging ports, batteries and more.
+</p>
+</div>
 
 </div>
 
 </section>
 
-<section
-class="booking">
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupText"></p>
+
+<button class="btn" onclick="closePopup()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<section class="request-form">
+
+<h2 class="section-title">
+📋 Repair Request Form
+</h2>
+
+<div style="max-width:700px;margin:auto;">
+
+<input
+type="text"
+placeholder="Full Name"
+style="width:100%;padding:15px;margin-bottom:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<input
+type="email"
+placeholder="Email Address"
+style="width:100%;padding:15px;margin-bottom:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<input
+type="text"
+placeholder="Device Model"
+style="width:100%;padding:15px;margin-bottom:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<textarea
+placeholder="Describe the problem with your device"
+style="width:100%;height:150px;padding:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;margin-bottom:20px;"></textarea>
+
+<a
+href="https://www.facebook.com/share/1KhUVitn95/"
+target="_blank"
+class="btn">
+Submit Request
+</a>
+
+</div>
+
+</section>
+
+<section class="tracker">
 
 <h2 class="section-title">
 ⏱️ Repair Status Tracker
 </h2>
 
-<div
-style="
-max-width:700px;
-margin:auto;
-">
+<div style="max-width:700px;margin:auto;background:#111;padding:30px;border-radius:15px;">
+
+<p>
+Enter your repair ticket number:
+</p>
 
 <input
+type="text"
 id="ticketInput"
-placeholder="Enter Repair Ticket">
+placeholder="Example: TF-1001"
+style="width:100%;padding:15px;margin-top:15px;background:#111;border:1px solid #333;border-radius:10px;color:white;">
+
+<br><br>
 
 <button
 class="btn"
 onclick="checkRepairStatus()">
-
 Check Status
-
 </button>
 
-<br><br>
-
-<h2
-id="statusResult">
-</h2>
+<div
+id="statusResult"
+style="margin-top:25px;color:#008cff;font-size:22px;font-weight:bold;">
+</div>
 
 </div>
 
 </section>
 
-<div
-id="adminLogin"
-style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-z-index:10000;
-">
-
-<div
-style="
-background:#111;
-padding:30px;
-border-radius:15px;
-width:90%;
-max-width:500px;
-border:2px solid #008cff;
-">
-
-<h2>
-🔒 Admin Login
-</h2>
-
-<br>
-
-<input
-id="adminCode"
-placeholder="Enter Admin Code">
-
-<button
-class="btn"
-onclick="loginAdmin()">
-
-Login
-
-</button>
-
-</div>
-
-</div>
-
-<section
-id="adminPanel"
-style="
-display:none;
-padding:80px 20px;
-">
+<section id="about" class="about">
 
 <h2 class="section-title">
-⚙️ Admin Panel
+About TrueFix Wireless
 </h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>
-📝 Add Review
-</h3>
-
-<textarea
-id="reviewText"
-placeholder="Customer Review">
-</textarea>
-
-<button
-class="btn"
-onclick="addReview()">
-
-Add Review
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-📸 Upload Gallery Image
-</h3>
-
-<input
-type="file"
-id="galleryUpload"
-accept="image/*">
-
-<button
-class="btn"
-onclick="addGalleryImage()">
-
-Upload
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-🔧 Update Repair Status
-</h3>
-
-<input
-id="statusTicket"
-placeholder="Ticket Number">
-
-<input
-id="statusText"
-placeholder="New Status">
-
-<button
-class="btn"
-onclick="updateStatus()">
-
-Update Status
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-📊 Business Stats
-</h3>
 
 <p>
-Tickets Created
+TrueFix Wireless is dedicated to providing professional electronic repair services with honest pricing, clear communication, and quality workmanship. Customers can choose budget, OEM, or premium replacement parts depending on their needs and budget.
 </p>
-
-<h2
-id="ticketCount">
-0
-</h2>
-
-</div>
-
-</div>
 
 </section>
 
-<script>
-
-let logoClicks = 0;
-
-function logoClick(){
-
-logoClicks++;
-
-if(logoClicks >= 3){
-
-document.getElementById(
-"adminLogin"
-).style.display = "flex";
-
-logoClicks = 0;
-
-}
-
-}
-
-function loginAdmin(){
-
-let code =
-document.getElementById(
-"adminCode"
-).value;
-
-if(code === "10864319"){
-
-document.getElementById(
-"adminLogin"
-).style.display = "none";
-
-document.getElementById(
-"adminPanel"
-).style.display = "block";
-
-alert(
-"Admin Access Granted"
-);
-
-}else{
-
-alert(
-"Incorrect Admin Code"
-);
-
-}
-
-}
-
-function toggleMenu(){
-
-let menu =
-document.getElementById(
-"sideMenu"
-);
-
-if(menu.style.left === "0px"){
-
-menu.style.left = "-320px";
-
-}else{
-
-menu.style.left = "0px";
-
-}
-
-}
-
-function toggleTheme(){
-
-if(document.body.style.background === "white"){
-
-document.body.style.background =
-"#050505";
-
-document.body.style.color =
-"white";
-
-}else{
-
-document.body.style.background =
-"white";
-
-document.body.style.color =
-"black";
-
-}
-
-}
-
-function calculateQuote(){
-
-let price =
-document.getElementById(
-"repairType"
-).value;
-
-document.getElementById(
-"quoteResult"
-).innerHTML =
-"Estimated Cost: $" + price;
-
-}
-
-function createTicket(){
-
-let ticket =
-"TF-" +
-Math.floor(
-100000 + Math.random()*900000
-);
-
-document.getElementById(
-"ticketOutput"
-).innerHTML =
-"Repair Ticket: " + ticket;
-
-localStorage.setItem(
-ticket,
-"Waiting For Device"
-);
-
-let count =
-parseInt(
-localStorage.getItem(
-"ticketCount"
-) || "0"
-);
-
-count++;
-
-localStorage.setItem(
-"ticketCount",
-count
-);
-
-document.getElementById(
-"ticketCount"
-).innerHTML =
-count;
-
-}
-
-function checkRepairStatus(){
-
-let ticket =
-document.getElementById(
-"ticketInput"
-).value;
-
-let status =
-localStorage.getItem(
-ticket
-);
-
-document.getElementById(
-"statusResult"
-).innerHTML =
-status || "Ticket Not Found";
-
-}
-
-function updateStatus(){
-
-let ticket =
-document.getElementById(
-"statusTicket"
-).value;
-
-let status =
-document.getElementById(
-"statusText"
-).value;
-
-localStorage.setItem(
-ticket,
-status
-);
-
-alert(
-"Repair Status Updated"
-);
-
-}
-
-function addReview(){
-
-let review =
-document.getElementById(
-"reviewText"
-).value;
-
-if(review === "") return;
-
-let container =
-document.getElementById(
-"reviewContainer"
-);
-
-container.innerHTML +=
-
-'<div class="card">' +
-'<h3>★★★★★</h3>' +
-'<p>' +
-review +
-'</p>' +
-'</div>';
-
-document.getElementById(
-"reviewText"
-).value = "";
-
-}
-
-function addGalleryImage(){
-
-let file =
-document.getElementById(
-"galleryUpload"
-).files[0];
-
-if(!file) return;
-
-let reader =
-new FileReader();
-
-reader.onload =
-function(e){
-
-let container =
-document.getElementById(
-"galleryContainer"
-);
-
-container.innerHTML +=
-
-'<div class="card">' +
-'<img src="' +
-e.target.result +
-'" style="width:100%;border-radius:10px;">' +
-'</div>';
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-window.onload = function(){
-
-let count =
-parseInt(
-localStorage.getItem(
-"ticketCount"
-) || "0"
-);
-
-if(
-document.getElementById(
-"ticketCount"
-)
-){
-
-document.getElementById(
-"ticketCount"
-).innerHTML =
-count;
-
-}
-
-}
-
-</script>
-
-
-<section
-class="legal">
+<section id="shipping" class="about">
 
 <h2 class="section-title">
 📦 Shipping Information
 </h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>
-Secure Packaging
-</h3>
-
 <p>
-
-Please package devices carefully before shipping. Bubble wrap and a sturdy box are recommended.
-
+Customers are responsible for securely packaging devices before shipping. Tracking numbers and shipping insurance are highly recommended. TrueFix Wireless is not responsible for shipping damage that occurs during transit to our repair location.
 </p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Tracked Shipping
-</h3>
-
-<p>
-
-Customers are responsible for shipping devices and should use a tracked shipping service.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Shipping Insurance
-</h3>
-
-<p>
-
-Insurance is recommended for valuable devices during transit.
-
-</p>
-
-</div>
-
-</div>
 
 </section>
 
-<section
-class="legal">
+<section id="repair-policy" class="about">
+
+<h2 class="section-title">
+🔧 Repair Policy
+</h2>
+
+<p>
+By submitting a device for repair, customers authorize diagnostic and repair work. Additional issues may be discovered after opening a device. Water damaged devices cannot be guaranteed to be fully recoverable.
+</p>
+
+</section>
+
+<section id="warranty" class="about">
 
 <h2 class="section-title">
 🛡️ Warranty Policy
 </h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>
-Covered Repairs
-</h3>
-
 <p>
-
-Replacement parts installed by TrueFix Wireless may be covered by a limited warranty.
-
+Warranty applies only to replacement parts installed by TrueFix Wireless. Physical damage, liquid damage, misuse, neglect, or repairs performed by others after service may void warranty coverage.
 </p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Not Covered
-</h3>
-
-<p>
-
-Physical damage, water damage, abuse, and unauthorized repairs may void warranty coverage.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Warranty Claims
-</h3>
-
-<p>
-
-Contact TrueFix Wireless as soon as possible if you believe there is a warranty issue.
-
-</p>
-
-</div>
-
-</div>
 
 </section>
 
-<section
-class="legal">
+<section id="privacy" class="about">
+
+<h2 class="section-title">
+🔒 Privacy Policy
+</h2>
+
+<p>
+Customer information is collected only for repair services, communication, invoicing, and customer support. TrueFix Wireless does not sell customer information to third parties.
+</p>
+
+</section>
+
+<section id="terms" class="about">
 
 <h2 class="section-title">
 📜 Terms & Conditions
 </h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>
-Data Responsibility
-</h3>
-
 <p>
-
-Customers should back up all important data before repair. Data loss can occur during repair procedures.
-
+Repair times are estimates and not guarantees. Customers should back up all personal data before submitting devices. TrueFix Wireless is not responsible for data loss occurring during repair services.
 </p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Repair Authorization
-</h3>
-
-<p>
-
-Submitting a device authorizes diagnostics and repair work required to complete the requested service.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Repair Estimates
-</h3>
-
-<p>
-
-Repair prices and completion times are estimates and may change if additional issues are discovered.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Liability
-</h3>
-
-<p>
-
-TrueFix Wireless is not responsible for pre-existing device issues or damage that occurred before receiving the device.
-
-</p>
-
-</div>
-
-</div>
 
 </section>
 
-<section
-class="contact">
+<section id="contact" class="contact">
 
 <h2 class="section-title">
-🗺️ Service Area
+Contact Us
 </h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>
-Mail-In Repairs Available
-</h3>
-
 <p>
-
-Customers can ship devices for repair. Contact us before shipping your device.
-
+📱 Professional Electronic Repairs
 </p>
 
-</div>
-
-<div class="card">
-
-<h3>
-Local Service
-</h3>
-
 <p>
-
-Serving customers through mail-in repair services and local arrangements when available.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section
-id="contact"
-class="contact">
-
-<h2 class="section-title">
-📞 Contact Us
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>
-Facebook Support
-</h3>
-
-<p>
-
-Message us directly on Facebook for repair requests, quotes, and support.
-
+🔧 Phones • Tablets • Screens • Batteries • Charging Ports • Back Glass • More
 </p>
 
 <br>
@@ -1393,343 +598,271 @@ Message us directly on Facebook for repair requests, quotes, and support.
 href="https://www.facebook.com/share/1KhUVitn95/"
 target="_blank"
 class="btn">
-
-Message Us
-
+💬 Message Us On Facebook
 </a>
-
-</div>
-
-<div class="card">
-
-<h3>
-Business Hours
-</h3>
-
-<p>
-
-Monday - Friday
-
-<br><br>
-
-9:00 AM - 6:00 PM
-
-<br><br>
-
-Saturday
-
-<br><br>
-
-10:00 AM - 4:00 PM
-
-<br><br>
-
-Sunday
-
-<br><br>
-
-Closed
-
-</p>
-
-</div>
-
-</div>
 
 </section>
 
-<div
-id="cookieBanner"
-style="
+<footer>
+
+© 2026 TrueFix Wireless
+
+<br><br>
+
+Fast • Honest • Reliable
+
+</footer>
+
+
+<style>
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+z-index:10000;
+}
+
+.popup-content{
+background:#111;
+padding:30px;
+width:90%;
+max-width:700px;
+border-radius:15px;
+border:2px solid #008cff;
+}
+
+.popup-content h2{
+color:#008cff;
+margin-bottom:15px;
+}
+
+.popup-content p{
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.cookie-popup{
 position:fixed;
 bottom:20px;
 left:20px;
 right:20px;
 background:#111;
-padding:20px;
 border:2px solid #008cff;
+padding:20px;
 border-radius:15px;
-z-index:99999;
-">
+z-index:15000;
+}
 
-<h3>
+.cookie-popup button{
+margin-top:10px;
+margin-right:10px;
+}
+
+</style>
+
+<div
+id="cookiePopup"
+class="cookie-popup">
+
+<h2>
 🍪 Cookie Notice
-</h3>
-
-<br>
+</h2>
 
 <p>
-
-This website uses browser storage to save repair information and website settings.
-
+This website uses cookies and local storage to improve your experience and save preferences. By clicking Accept, you agree to the use of cookies.
 </p>
-
-<br>
 
 <button
 class="btn"
-onclick="document.getElementById('cookieBanner').style.display='none'">
-
+onclick="acceptCookies()">
 Accept
-
 </button>
 
 <button
 class="btn"
-onclick="document.getElementById('cookieBanner').style.display='none'">
-
+onclick="declineCookies()">
 Decline
-
 </button>
 
 </div>
-
-<footer
-style="
-padding:40px;
-text-align:center;
-border-top:3px solid #008cff;
-margin-top:50px;
-">
-
-<h2>
-TrueFix Wireless
-</h2>
-
-<br>
-
-<p>
-
-Professional Phone & Electronics Repair
-
-</p>
-
-<br>
-
-<p>
-
-© 2026 TrueFix Wireless. All Rights Reserved.
-
-</p>
-
-</footer>
-
-<section
-id="dashboard"
-class="legal">
-
-<h2 class="section-title">
-📊 Business Dashboard
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>
-🎟️ Total Repair Tickets
-</h3>
-
-<h1
-id="totalTickets">
-0
-</h1>
-
-</div>
-
-<div class="card">
-
-<h3>
-✅ Completed Repairs
-</h3>
-
-<h1
-id="completedRepairs">
-0
-</h1>
-
-</div>
-
-<div class="card">
-
-<h3>
-⭐ Total Reviews
-</h3>
-
-<h1
-id="totalReviews">
-0
-</h1>
-
-</div>
-
-</div>
-
-</section>
-
-<section
-id="adminTools"
-style="
-display:none;
-padding:80px 20px;
-">
-
-<h2 class="section-title">
-🛠️ Advanced Admin Tools
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>
-🗑️ Delete Review
-</h3>
-
-<input
-id="deleteReviewInput"
-placeholder="Review Number">
-
-<button
-class="btn"
-onclick="deleteReview()">
-
-Delete Review
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-🖼️ Delete Gallery Image
-</h3>
-
-<input
-id="deleteImageInput"
-placeholder="Image Number">
-
-<button
-class="btn"
-onclick="deleteImage()">
-
-Delete Image
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-✅ Complete Repair
-</h3>
-
-<input
-id="completeRepairTicket"
-placeholder="Ticket Number">
-
-<button
-class="btn"
-onclick="completeRepair()">
-
-Mark Complete
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section
-class="contact">
-
-<h2 class="section-title">
-🔔 Notifications
-</h2>
-
-<div
-id="notificationArea"
-style="
-max-width:1000px;
-margin:auto;
-">
-
-<div class="card">
-
-<h3>
-System Notifications
-</h3>
-
-<p>
-
-No notifications.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
 
 <script>
 
-function deleteReview(){
+function toggleMenu(){
 
-alert(
-"Delete Review feature will be activated in Part 8."
-);
+let menu =
+document.getElementById("sideMenu");
+
+if(menu.style.left==="0px"){
+
+menu.style.left="-320px";
+
+}else{
+
+menu.style.left="0px";
 
 }
 
-function deleteImage(){
+}
 
-alert(
-"Delete Image feature will be activated in Part 8."
-);
+function openPopup(type){
+
+let title="";
+let text="";
+
+if(type==="screen"){
+
+title="📱 Screen Repair";
+
+text="We professionally replace cracked, damaged, or non-working screens. Every repair is tested for touch response, display quality, brightness, and overall functionality before being returned.";
 
 }
 
-function completeRepair(){
+if(type==="battery"){
 
-let completed =
-parseInt(
-localStorage.getItem(
-"completedRepairs"
-) || "0"
-);
+title="🔋 Battery Replacement";
 
-completed++;
+text="Battery replacements are available using the quality option you choose. We verify charging performance and battery health after installation.";
+
+}
+
+if(type==="charging"){
+
+title="🔌 Charging Port Repair";
+
+text="Charging issues are diagnosed and repaired. Ports may be cleaned, repaired, or replaced depending on the issue.";
+
+}
+
+if(type==="water"){
+
+title="💧 Water Damage Repair";
+
+text="Water damaged devices are inspected, cleaned, and diagnosed. Recovery depends on the extent of the liquid damage.";
+
+}
+
+if(type==="camera"){
+
+title="📷 Camera Repair";
+
+text="Front and rear camera problems including blurry images, broken lenses, and camera failures can be diagnosed and repaired.";
+
+}
+
+if(type==="parts"){
+
+title="⚙️ Custom Part Options";
+
+text="Choose between budget, OEM, or premium replacement parts. We explain the differences so you can make an informed decision.";
+
+}
+
+if(type==="backglass"){
+
+title="🔥 Back Glass Repair";
+
+text="Broken back glass is carefully removed and replaced. The device is cleaned and inspected throughout the repair process.";
+
+}
+
+if(type==="more"){
+
+title="➕ Additional Services";
+
+text="Speaker repair, microphone repair, button repair, diagnostics, housing replacement, cleaning services, and more.";
+
+}
+
+document.getElementById("popupTitle").innerHTML=title;
+
+document.getElementById("popupText").innerHTML=text;
+
+document.getElementById("popup").style.display="flex";
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+let popup=document.getElementById("popup");
+
+if(event.target===popup){
+
+popup.style.display="none";
+
+}
+
+}
+
+function checkRepairStatus(){
+
+let ticket=
+document.getElementById("ticketInput").value;
+
+let result=
+document.getElementById("statusResult");
+
+if(ticket==="TF-1001"){
+
+result.innerHTML=
+"✅ Repair Completed";
+
+}
+
+else if(ticket==="TF-1002"){
+
+result.innerHTML=
+"🔧 Currently Being Repaired";
+
+}
+
+else if(ticket==="TF-1003"){
+
+result.innerHTML=
+"📦 Waiting For Parts";
+
+}
+
+else{
+
+result.innerHTML=
+"❓ Ticket Not Found";
+
+}
+
+}
+
+function acceptCookies(){
 
 localStorage.setItem(
-"completedRepairs",
-completed
+"truefixCookies",
+"accepted"
 );
 
 document.getElementById(
-"completedRepairs"
-).innerHTML =
-completed;
+"cookiePopup"
+).style.display="none";
 
-let area =
+}
+
+function declineCookies(){
+
 document.getElementById(
-"notificationArea"
-);
-
-area.innerHTML +=
-
-'<div class="card">' +
-'<h3>Repair Completed</h3>' +
-'<p>A repair was marked as completed.</p>' +
-'</div>';
-
-alert(
-"Repair marked complete."
-);
+"cookiePopup"
+).style.display="none";
 
 }
 
@@ -1737,396 +870,15 @@ window.addEventListener(
 "load",
 function(){
 
-let tickets =
-parseInt(
+if(
 localStorage.getItem(
-"ticketCount"
-) || "0"
-);
-
-let completed =
-parseInt(
-localStorage.getItem(
-"completedRepairs"
-) || "0"
-);
+"truefixCookies"
+)
+){
 
 document.getElementById(
-"totalTickets"
-).innerHTML =
-tickets;
-
-document.getElementById(
-"completedRepairs"
-).innerHTML =
-completed;
-
-let reviews =
-document.querySelectorAll(
-"#reviewContainer .card"
-).length;
-
-document.getElementById(
-"totalReviews"
-).innerHTML =
-reviews;
-
-}
-);
-
-</script>
-
-<section
-class="legal">
-
-<h2 class="section-title">
-📜 Repair History
-</h2>
-
-<div
-id="repairHistory"
-class="grid">
-
-<div class="card">
-
-<h3>
-No Repairs Yet
-</h3>
-
-<p>
-
-Completed repairs will appear here.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section
-class="booking">
-
-<h2 class="section-title">
-🧾 Repair Receipt Generator
-</h2>
-
-<div
-style="
-max-width:800px;
-margin:auto;
-">
-
-<input
-id="receiptCustomer"
-placeholder="Customer Name">
-
-<input
-id="receiptDevice"
-placeholder="Device">
-
-<input
-id="receiptCost"
-placeholder="Repair Cost">
-
-<button
-class="btn"
-onclick="generateReceipt()">
-
-Generate Receipt
-
-</button>
-
-<br><br>
-
-<div
-id="receiptOutput">
-
-</div>
-
-</div>
-
-</section>
-
-<section
-class="booking">
-
-<h2 class="section-title">
-📈 Repair Progress Tracker
-</h2>
-
-<div
-style="
-max-width:800px;
-margin:auto;
-">
-
-<input
-id="progressTicket"
-placeholder="Ticket Number">
-
-<select
-id="progressSelect">
-
-<option>
-Received
-</option>
-
-<option>
-Diagnosing
-</option>
-
-<option>
-Waiting For Parts
-</option>
-
-<option>
-Repairing
-</option>
-
-<option>
-Testing
-</option>
-
-<option>
-Completed
-</option>
-
-</select>
-
-<button
-class="btn"
-onclick="saveProgress()">
-
-Save Progress
-
-</button>
-
-<br><br>
-
-<h2
-id="progressResult">
-
-</h2>
-
-</div>
-
-</section>
-
-<section
-class="reviews">
-
-<h2 class="section-title">
-🏆 Why Choose TrueFix Wireless?
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>
-⚡ Fast Repairs
-</h3>
-
-<p>
-
-Quick turnaround times whenever possible.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-💰 Fair Pricing
-</h3>
-
-<p>
-
-Affordable repairs without sacrificing quality.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-🔧 Quality Parts
-</h3>
-
-<p>
-
-Budget, OEM, and premium options available.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-⭐ Customer Focused
-</h3>
-
-<p>
-
-Friendly service and clear communication.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section
-id="adminNotesSection"
-style="
-display:none;
-padding:80px 20px;
-">
-
-<h2 class="section-title">
-📝 Admin Notes
-</h2>
-
-<div
-style="
-max-width:800px;
-margin:auto;
-">
-
-<textarea
-id="adminNoteText"
-placeholder="Write Admin Notes Here">
-</textarea>
-
-<button
-class="btn"
-onclick="saveAdminNote()">
-
-Save Note
-
-</button>
-
-<br><br>
-
-<div
-id="savedAdminNotes">
-
-No Notes Saved
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-function generateReceipt(){
-
-let customer =
-document.getElementById(
-"receiptCustomer"
-).value;
-
-let device =
-document.getElementById(
-"receiptDevice"
-).value;
-
-let cost =
-document.getElementById(
-"receiptCost"
-).value;
-
-document.getElementById(
-"receiptOutput"
-).innerHTML =
-
-'<div class="card">' +
-
-'<h3>Receipt</h3>' +
-
-'<p><b>Customer:</b> ' +
-customer +
-'</p>' +
-
-'<p><b>Device:</b> ' +
-device +
-'</p>' +
-
-'<p><b>Total:</b> $' +
-cost +
-'</p>' +
-
-'</div>';
-
-}
-
-function saveProgress(){
-
-let status =
-document.getElementById(
-"progressSelect"
-).value;
-
-document.getElementById(
-"progressResult"
-).innerHTML =
-
-"Current Status: " +
-status;
-
-}
-
-function saveAdminNote(){
-
-let note =
-document.getElementById(
-"adminNoteText"
-).value;
-
-document.getElementById(
-"savedAdminNotes"
-).innerHTML =
-
-'<div class="card">' +
-
-note +
-
-'</div>';
-
-localStorage.setItem(
-"adminNote",
-note
-);
-
-}
-
-window.addEventListener(
-"load",
-function(){
-
-let note =
-localStorage.getItem(
-"adminNote"
-);
-
-if(note){
-
-document.getElementById(
-"savedAdminNotes"
-).innerHTML =
-
-'<div class="card">' +
-note +
-'</div>';
+"cookiePopup"
+).style.display="none";
 
 }
 
@@ -2134,240 +886,6 @@ note +
 );
 
 </script>
-
-
-<script>
-
-window.addEventListener(
-"load",
-function(){
-
-if(
-localStorage.getItem(
-"adminUnlocked"
-) === "true"
-){
-
-document.getElementById(
-"adminPanel"
-).style.display =
-"block";
-
-let tools =
-document.getElementById(
-"adminTools"
-);
-
-if(tools){
-
-tools.style.display =
-"block";
-
-}
-
-let notes =
-document.getElementById(
-"adminNotesSection"
-);
-
-if(notes){
-
-notes.style.display =
-"block";
-
-}
-
-}
-
-}
-);
-
-const originalLoginAdmin =
-loginAdmin;
-
-loginAdmin = function(){
-
-let code =
-document.getElementById(
-"adminCode"
-).value;
-
-if(code === "10864319"){
-
-localStorage.setItem(
-"adminUnlocked",
-"true"
-);
-
-document.getElementById(
-"adminLogin"
-).style.display =
-"none";
-
-document.getElementById(
-"adminPanel"
-).style.display =
-"block";
-
-let tools =
-document.getElementById(
-"adminTools"
-);
-
-if(tools){
-
-tools.style.display =
-"block";
-
-}
-
-let notes =
-document.getElementById(
-"adminNotesSection"
-);
-
-if(notes){
-
-notes.style.display =
-"block";
-
-}
-
-alert(
-"Admin Access Granted"
-);
-
-}else{
-
-alert(
-"Incorrect Admin Code"
-);
-
-}
-
-};
-
-function adminLogout(){
-
-localStorage.removeItem(
-"adminUnlocked"
-);
-
-location.reload();
-
-}
-
-function deleteReview(){
-
-let reviews =
-document.querySelectorAll(
-"#reviewContainer .card"
-);
-
-let num =
-parseInt(
-document.getElementById(
-"deleteReviewInput"
-).value
-);
-
-if(
-num > 0 &&
-num <= reviews.length
-){
-
-reviews[num-1].remove();
-
-alert(
-"Review Deleted"
-);
-
-}else{
-
-alert(
-"Review Not Found"
-);
-
-}
-
-}
-
-function deleteImage(){
-
-let images =
-document.querySelectorAll(
-"#galleryContainer .card"
-);
-
-let num =
-parseInt(
-document.getElementById(
-"deleteImageInput"
-).value
-);
-
-if(
-num > 0 &&
-num <= images.length
-){
-
-images[num-1].remove();
-
-alert(
-"Image Deleted"
-);
-
-}else{
-
-alert(
-"Image Not Found"
-);
-
-}
-
-}
-
-</script>
-
-<footer
-style="
-background:#050505;
-padding:50px;
-text-align:center;
-border-top:3px solid #008cff;
-">
-
-<h2>
-TrueFix Wireless
-</h2>
-
-<br>
-
-<p>
-
-Professional Phone Repair & Electronics Service
-
-</p>
-
-<br>
-
-<button
-class="btn"
-onclick="adminLogout()">
-
-Admin Logout
-
-</button>
-
-<br><br>
-
-<p>
-
-© 2026 TrueFix Wireless
-
-</p>
-
-</footer>
 
 </body>
 </html>
